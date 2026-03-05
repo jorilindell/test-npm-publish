@@ -40,7 +40,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
       
       - name: Install dependencies
@@ -70,6 +69,8 @@ jobs:
       
       - name: Publish to npm (trusted publishing)
         run: npm publish --provenance --access public
+        env:
+          NPM_CONFIG_PROVENANCE: true
       
       - name: Get package version
         if: github.event_name == 'workflow_dispatch'

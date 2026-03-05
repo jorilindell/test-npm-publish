@@ -1,0 +1,44 @@
+# Git files
+.git/
+.gitignore
+
+# CI/CD files
+.github/
+.travis.yml
+.circleci/
+
+# Development files
+test/
+tests/
+*.test.js
+*.spec.js
+
+# Documentation (if you want to exclude it)
+# README.md
+# docs/
+
+# Development dependencies
+.eslintrc*
+.prettierrc*
+jest.config.js
+webpack.config.js
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/

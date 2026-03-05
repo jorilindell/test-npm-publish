@@ -1,0 +1,25 @@
+{
+  "name": "test-npm-publish-simple",
+  "version": "1.0.0",
+  "description": "A simple npm package for testing publication",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "test",
+    "simple",
+    "utility"
+  ],
+  "author": "Jori Lindell",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorilindell/test-npm-publish.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jorilindell/test-npm-publish/issues"
+  },
+  "homepage": "https://github.com/jorilindell/test-npm-publish#readme"
+}

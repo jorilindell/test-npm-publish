@@ -1,6 +1,6 @@
 {
   "name": "test-npm-publish-simple",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple npm package for testing publication",
   "main": "index.js",
   "scripts": {

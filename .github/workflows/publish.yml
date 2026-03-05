@@ -24,10 +24,10 @@ jobs:
     name: Publish to npm
     runs-on: ubuntu-latest
     
-    # Required for trusted publishing
+    # Required for trusted publishing and git operations
     permissions:
       id-token: write
-      contents: read
+      contents: write
     
     steps:
       - name: Checkout repository

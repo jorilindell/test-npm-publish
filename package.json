@@ -1,13 +1,13 @@
 {
   "name": "test-npm-publish-simple",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A simple npm package for testing publication",
   "main": "index.js",
   "scripts": {
     "test": "node test.js",
     "start": "node index.js",
     "release:patch": "npm version patch && git push --follow-tags",
-    "release:minor": "npm version minor && git push --follow-tags", 
+    "release:minor": "npm version minor && git push --follow-tags",
     "release:major": "npm version major && git push --follow-tags",
     "release:beta": "npm version prerelease --preid=beta && git push --follow-tags"
   },

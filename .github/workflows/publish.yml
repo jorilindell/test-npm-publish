@@ -4,12 +4,6 @@ on:
   push:
     tags:
       - 'v*'
-  workflow_call:
-    inputs:
-      ref:
-        description: 'Git ref to checkout'
-        required: false
-        type: string
 
 permissions:
   id-token: write  # Required for OIDC
@@ -20,16 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ inputs.ref || github.ref }}
 
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
           registry-url: 'https://registry.npmjs.org'
+          
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
       - run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

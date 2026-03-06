@@ -30,3 +30,7 @@ jobs:
         run: |
           npm version minor
           git push origin main --tags
+
+  publish:
+    needs: create-minor-release
+    uses: ./.github/workflows/publish.yml

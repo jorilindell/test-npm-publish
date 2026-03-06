@@ -30,3 +30,7 @@ jobs:
         run: |
           npm version patch
           git push origin main --tags
+
+  publish:
+    needs: create-patch-release
+    uses: ./.github/workflows/publish.yml

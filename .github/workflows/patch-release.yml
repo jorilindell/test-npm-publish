@@ -41,3 +41,5 @@ jobs:
   publish:
     needs: create-patch-release
     uses: ./.github/workflows/publish.yml
+    with:
+      ref: ${{ needs.create-patch-release.outputs.new-tag }}

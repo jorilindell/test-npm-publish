@@ -41,3 +41,5 @@ jobs:
   publish:
     needs: create-minor-release
     uses: ./.github/workflows/publish.yml
+    with:
+      ref: ${{ needs.create-minor-release.outputs.new-tag }}

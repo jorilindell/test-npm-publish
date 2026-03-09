@@ -10,6 +10,8 @@ permissions:
 jobs:
   create-patch-release:
     runs-on: ubuntu-latest
+    outputs:
+      new-tag: ${{ steps.version.outputs.tag }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -28,10 +30,15 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Bump version and create tag
+        id: version
         run: |
-          npm version patch
+          NEW_VERSION=$(npm version patch)
+          echo "tag=$NEW_VERSION" >> $GITHUB_OUTPUT
           git push origin main --tags
 
   publish:
     needs: create-patch-release
     uses: ./.github/workflows/publish.yml
+    with:
+      tag-ref: ${{ needs.create-patch-release.outputs.new-tag }}
+    secrets: inherit
